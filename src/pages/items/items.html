@@ -1,0 +1,19 @@
+<ion-header>
+
+	<ion-navbar>
+		<ion-title>{{item.title}}</ion-title>
+	</ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<ion-list>
+		<button ion-item *ngFor="let arry of array" (click)="itemTapped($event, item)">
+			<ion-icon [name]="item.icon" item-start></ion-icon>
+			{{arry.marca}}
+			<br>
+			{{arry.talla}}
+		</button>
+	</ion-list>
+</ion-content>

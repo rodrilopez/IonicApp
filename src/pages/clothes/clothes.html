@@ -1,0 +1,61 @@
+<!--
+Generated template for the ClothesPage page.
+
+See http://ionicframework.com/docs/components/#navigation for more info on
+Ionic pages and navigation.
+-->
+<ion-header>
+
+	<ion-navbar>
+		<ion-title>Adding a New Clothe</ion-title>
+	</ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<ion-list>
+		<form [formGroup]="todo" (ngSubmit)="logForm()">
+			<ion-item>
+				<ion-label floating>Tipo</ion-label>
+				<ion-select formControlName="tipo">
+					<ion-option value="Buzos">Buzos</ion-option>
+					<ion-option value="Pantalones">Pantalones</ion-option>
+					<ion-option value="Remeras">Remeras</ion-option>
+					<ion-option value="Accesorios">Accesorios</ion-option>
+					<ion-option value="Camperas">Camperas</ion-option>
+					<ion-option value="Zapatillas">Zapatillas</ion-option>
+					<ion-option value="Ropa Interior">Ropa Interior</ion-option>
+				</ion-select>
+			</ion-item>
+
+			<ion-item>
+				<ion-label floating>Marca</ion-label>
+				<ion-input type="text" formControlName="marca"></ion-input>
+			</ion-item>
+
+			<ion-item>
+				<ion-label floating>Talla</ion-label>
+				<ion-input type="text" formControlName="talla"></ion-input>
+			</ion-item>
+
+			<ion-item>
+				<ion-label floating>Color</ion-label>
+				<ion-input type="text" formControlName="color"></ion-input>
+			</ion-item>
+
+			<ion-item>
+				<ion-label floating>Precio</ion-label>
+				<ion-input type="text" formControlName="precio"></ion-input>
+			</ion-item>
+
+			<ion-item hidden>
+				<ion-label floating>nepe</ion-label>
+				<ion-input type="nep"></ion-input>
+			</ion-item>
+
+			<br>
+			<button block color="secondary" ion-button type="submit" [disabled]="!todo.valid">Save</button>
+		</form>
+	</ion-list>
+</ion-content>
