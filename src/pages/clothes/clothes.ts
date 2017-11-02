@@ -2,17 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { Storage } from '@ionic/storage';
-import { HomePage } from '../home/home';
 import { AlertController } from 'ionic-angular';
-
-//import { DbProvider } from '../../providers/db/db';
-
-/**
- * Generated class for the ClothesPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({

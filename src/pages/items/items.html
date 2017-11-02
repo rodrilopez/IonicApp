@@ -9,11 +9,18 @@
 
 <ion-content padding>
 	<ion-list>
-		<button ion-item *ngFor="let arry of array" (click)="itemTapped($event, item)">
-			<ion-icon [name]="item.icon" item-start></ion-icon>
-			{{arry.marca}}
-			<br>
-			{{arry.talla}}
-		</button>
+
+		<ion-card *ngFor="let arry of array" (click)="itemTapped($event, item)">
+			<img src="img/nin-live.png"/>
+			<ion-card-content>
+				<ion-card-title>
+					{{arry.marca}}
+				</ion-card-title>
+				<p>
+					Talla: {{arry.talla}}
+				</p>
+			</ion-card-content>
+		</ion-card>
+		
 	</ion-list>
 </ion-content>
