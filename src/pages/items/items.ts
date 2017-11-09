@@ -15,14 +15,17 @@ export class ItemsPage {
 	array = [];
 
 	constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage, public modalCtrl: ModalController) {
-
 		this.item = navParams.get('item')
+		this.pushItems()
+	}
 
+	pushItems(){
+		this.array =[];
 		this.storage.keys().then((asd) => {
 			for (let i of asd){
 				this.storage.get(i).then((val) => {
 					let jsval = JSON.parse(val);
-					if (jsval.tipo == this.item.title){
+					if (jsval.type == this.item.title){
 						this.array.push(jsval);
 					}
 				})
@@ -32,9 +35,12 @@ export class ItemsPage {
 		console.log(this.array);
 	}
 
-	itemTapped(event, item) {
+	itemTapped(event, array, item) {
 		// That's right, we're pushing to ourselves!
-		let modal = this.modalCtrl.create(ModalPage);
+		let modal = this.modalCtrl.create(ModalPage, array);
+		modal.onDidDismiss(() => {
+			this.pushItems();
+		});
 		modal.present();
 	}
 }

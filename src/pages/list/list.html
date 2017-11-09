@@ -1,5 +1,5 @@
 <ion-header>
-	<ion-toolbar color="primary">
+	<ion-toolbar>
 		<ion-navbar>
 			<button ion-button menuToggle>
 				<ion-icon name="menu"></ion-icon>
@@ -12,15 +12,13 @@
 <ion-content>
 	<ion-list>
 		<button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
-			<ion-icon [name]="item.icon" item-start></ion-icon>
+			<img src={{item.icon}} id={{item.title}} style="margin-right: 10px; margin-bottom: -6px;"/> 
 			{{item.title}}
-			<div class="item-note" item-end>
-				{{item.note}}
-			</div>
 		</button>
 	</ion-list>
+
 	<ion-fab right bottom>
-		<button ion-fab (click)="toPageAddClothe()"><ion-icon name="add"></ion-icon></button>
+		<button ion-fab (click)="toPageAddClothe($event, item)"><ion-icon name="add"></ion-icon></button>
 	</ion-fab>
 
 </ion-content>

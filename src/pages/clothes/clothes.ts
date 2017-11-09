@@ -12,37 +12,41 @@ import { AlertController } from 'ionic-angular';
 export class ClothesPage {
 	private todo : FormGroup;
 	object = {
-		tipo: String,
-		marca: String,
-		talla: String,
+		id: 0,
+		type: String,
+		brand: String,
+		size: String,
 		color: String,
-		precio: String
+		price: String,
+		note: String
 	}
 
 	constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder, private storage: Storage, public alertCtrl: AlertController) {
 
 		this.todo = this.formBuilder.group({
-			tipo: ['', Validators.required],
-			marca: ['', Validators.required],
-			talla: ['', Validators.required],
+			type: ['', Validators.required],
+			brand: ['', Validators.required],
+			size: [''],
 			color: ['', Validators.required],
-			precio: ['', Validators.required],
+			price: ['', Validators.required],
+			note: [''],
 		});
 	}
 
 	logForm(){
 
-		this.object.tipo = this.todo.get('tipo').value;
-		this.object.marca = this.todo.get('marca').value;
-		this.object.talla = this.todo.get('talla').value;
+		this.object.type = this.todo.get('type').value;
+		this.object.brand = this.todo.get('brand').value;
+		this.object.size = this.todo.get('size').value;
 		this.object.color = this.todo.get('color').value;
-		this.object.precio = this.todo.get('precio').value;
-
-		let values = JSON.stringify(this.object, null);
+		this.object.price = this.todo.get('price').value;
+		this.object.note = this.todo.get('note').value;
 
 		this.storage.length().then((val) =>{
 			let key = val + 1;
-			let key2 = ""+key;
+			let key2 = key.toString();
+			this.object.id = key;
+			let values = JSON.stringify(this.object, null);
 			this.storage.set(key2, values);
 		})
 

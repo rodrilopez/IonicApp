@@ -10,14 +10,14 @@
 <ion-content padding>
 	<ion-list>
 
-		<ion-card *ngFor="let arry of array" (click)="itemTapped($event, item)">
+		<ion-card *ngFor="let arry of array" (click)="itemTapped($event, arry, item)" style="margin-top: 25px;">
 			<img src="img/nin-live.png"/>
 			<ion-card-content>
 				<ion-card-title>
-					{{arry.marca}}
+					{{arry.brand}}
 				</ion-card-title>
 				<p>
-					Talla: {{arry.talla}}
+					Size: {{arry.size}}
 				</p>
 			</ion-card-content>
 		</ion-card>
