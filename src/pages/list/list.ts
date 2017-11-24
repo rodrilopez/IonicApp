@@ -13,13 +13,13 @@ export class ListPage {
 	icons: string[];
 	nameItems: string[];
 	items: Array<{title: string, icon: string}>;
-	jogginImageUrl = ("../assets/imgs/jacket.png");
-	pantsImageUrl = ("../assets/imgs/pants.png");
-	shirtImageUrl = ("../assets/imgs/shirt.png");
-	underwearImageUrl = ("../assets/imgs/underwear.png");
-	tieImageUrl = ("../assets/imgs/tie.png");
-	shoeImageUrl = ("../assets/imgs/shoe.png");
-	jacketImageUrl = ("../assets/imgs/saco.png");
+	jogginImageUrl = ("./assets/imgs/jacket.png");
+	pantsImageUrl = ("./assets/imgs/pants.png");
+	shirtImageUrl = ("./assets/imgs/shirt.png");
+	underwearImageUrl = ("./assets/imgs/underwear.png");
+	tieImageUrl = ("./assets/imgs/tie.png");
+	shoeImageUrl = ("./assets/imgs/shoe.png");
+	jacketImageUrl = ("./assets/imgs/saco.png");
 
 	constructor(public navCtrl: NavController, public navParams: NavParams) {
 		// If we navigated to this page, we will have an item available as a nav param

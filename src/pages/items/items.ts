@@ -31,8 +31,6 @@ export class ItemsPage {
 				})
 			}
 		})
-
-		console.log(this.array);
 	}
 
 	itemTapped(event, array, item) {
